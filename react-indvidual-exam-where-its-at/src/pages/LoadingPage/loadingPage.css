@@ -1,0 +1,21 @@
+.start {
+	/* min-height: 100dvh; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.8rem;
+
+	.start__logo {
+		margin: 0 auto;
+	}
+	.start__sub-title {
+		font-family: 'Sansita', sans-serif;
+		font-style: italic;
+		font-weight: 100;
+		font-size: 1.2rem;
+		letter-spacing: 3%;
+		color: var(--primary-white);
+		text-align: center;
+	}
+}

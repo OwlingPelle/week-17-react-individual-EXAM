@@ -1,0 +1,36 @@
+.header__sub-title {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 200;
+	font-style: italic;
+	font-size: 1.2rem;
+	text-align: center;
+	color: var(--primary-white);
+	padding: 0 2rem 2rem 2rem;
+}
+
+.event {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	gap: 0.5rem;
+	.event__title {
+		font-size: 2.3rem;
+	}
+	.event__date {
+		color: var(--primary-turquoise);
+		font-size: 1.2rem;
+	}
+
+	.event__venue {
+		font-weight: 200;
+		font-style: italic;
+	}
+}
+
+.single-event-page__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 70vh; /* ELLER HUR FAN SKA JAG LÖSA SKITEN?????*/
+	gap: 2rem;
+}
