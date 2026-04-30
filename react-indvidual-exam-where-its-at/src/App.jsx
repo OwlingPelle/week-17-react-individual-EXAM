@@ -22,7 +22,7 @@ function App() {
 					element: <EventsPage />,
 				},
 				{
-					path: 'single-event',
+					path: 'events/:id',
 					element: <SingleEventPage />,
 				},
 				{

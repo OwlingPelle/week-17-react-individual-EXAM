@@ -1,8 +1,21 @@
 import './eventsPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+// import { useEffect } from 'react';
+import EventItem from '../../components/EventItem/EventItem';
+import { useFetchEvents } from '../../hooks/useFetchEvents';
+import EventList from '../../components/EventList/EventList';
 
 const EventsPage = () => {
+	const { events, isLoading, isError } = useFetchEvents();
+
+	// useEffect(() => {
+	// 	console.log(events);
+	// }, [events]);
+
+	// if (isLoading) return <p>Loading...</p>;
+	// if (isError) return <p>Something went wrong...</p>;
+
 	return (
 		<section className='page'>
 			<header className='header'>
@@ -13,23 +26,7 @@ const EventsPage = () => {
 					<input type='search' className='searchbar' />
 				</div>
 			</header>
-
-			<section className='event__list'>
-				<section className='event__item'>
-					<section className='event__date-container'>
-						<p className='event__day'>21</p>
-						<p className='event__month'>MAR</p>
-					</section>
-					<section className='event__details'>
-						<h2 className='event__title'>Lasse-Stefanz</h2>
-						<p className='event__venue'>Kjell Härnqvistsalen</p>
-						<section className='row'>
-							<span className='event__time'>19.00 - 21.00</span>
-							<span className='event__price'>350 SEK</span>
-						</section>
-					</section>
-				</section>
-			</section>
+			<EventList events={events} />
 		</section>
 	);
 };

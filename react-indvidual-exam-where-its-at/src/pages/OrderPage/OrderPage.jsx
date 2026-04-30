@@ -1,5 +1,6 @@
-import Button from '../../components/button/Button';
-import PriceSelector from '../../components/price-selector/PriceSelector';
+import Button from '../../components/Button/Button';
+import OrderItem from '../../components/OrderItem/OrderItem';
+import PriceSelector from '../../components/PriceSelector/PriceSelector';
 import './orderPage.css';
 
 const OrderPage = () => {
@@ -9,7 +10,7 @@ const OrderPage = () => {
 				<h1 className='header__title'>Order</h1>
 			</header>
 			<section className='single-event-page__wrapper'>
-				<PriceSelector />
+				<OrderItem />
 				<Button text='Skicka order' />
 				{/* ADDERA ON-CLICK SEN????*/}
 			</section>
