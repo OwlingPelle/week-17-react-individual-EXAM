@@ -4,11 +4,14 @@ import PriceSelector from '../../components/PriceSelector/PriceSelector';
 import './singleEventPage.css';
 import { useFetchEvents } from '../../hooks/useFetchEvents';
 import { useParams } from 'react-router-dom';
+import { useCartStore } from '../../stores/useCartStore';
+import Cart from '../../components/Cart/Cart';
 
 const SingleEventPage = () => {
 	const [activeEvent, setActiveEvent] = useState(null);
 	const { events, isLoading, isError } = useFetchEvents();
 	const { id } = useParams();
+	const { addToCart } = useCartStore();
 
 	useEffect(() => {
 		if (id && events.length > 0) {
@@ -21,7 +24,7 @@ const SingleEventPage = () => {
 	if (isLoading) return <p className='page-msg'>Loading ⏳</p>;
 	if (isError) return <p className='page-msg'>Something went wrong 😬</p>;
 	if (!activeEvent) return <p className='page-msg'>No event found 🧐</p>;
-	console.log('PriceSelector event:', activeEvent);
+	// console.log('PriceSelector event:', activeEvent);
 
 	// 1. tillståndsvariabel aktuellt event.
 	// 2. hämta alla event med useFetch.
@@ -43,7 +46,13 @@ const SingleEventPage = () => {
 					<p className='event__venue'>{activeEvent.name}</p>
 				</section>
 				<PriceSelector activeEvent={activeEvent} />
-				<Button text='Lägg i varukorgen' /> {/* ADDERA ON-CLICK SEN????*/}
+				<Button
+					onClick={() => {
+						// addToCart(event, qty);
+						console.log('TRYCKT!');
+					}}
+					text='Lägg i varukorgen'
+				/>
 			</section>
 		</section>
 	);

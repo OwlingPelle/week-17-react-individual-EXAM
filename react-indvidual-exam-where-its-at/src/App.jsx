@@ -26,7 +26,7 @@ function App() {
 					element: <SingleEventPage />,
 				},
 				{
-					path: 'order',
+					path: 'cart',
 					element: <OrderPage />,
 				},
 				{

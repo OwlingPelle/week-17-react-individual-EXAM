@@ -1,30 +1,40 @@
 import { useEffect, useState } from 'react';
 import './priceSelector.css';
+import { useCartStore } from '../../stores/useCartStore';
 // import Counter from '../../hooks/useCounter';
 
 const PriceSelector = ({ activeEvent }) => {
-	const [count, setCount] = useState(1);
+	const [count, setCount] = useState(0);
+	const { cart, addToCart, removeFromCart } = useCartStore();
 
-	const increase = () => {
-		setCount((prev) => prev + 1);
-		console.log('increase');
-	};
+	useEffect(() => {
+		const cartItem = cart.find((e) => e.id === activeEvent.id);
+		if (cartItem) setCount(cartItem.qty);
+	}, [cart]);
 
-	function decrease() {
+	function decreaseCount() {
 		if (count > 0) setCount((prev) => prev - 1);
-		console.log('decrease');
+		// console.log('decrease');
+		removeFromCart(activeEvent.id);
 	}
+
+	const increaseCount = () => {
+		setCount((prev) => prev + 1);
+		// console.log('increase');
+		addToCart(activeEvent);
+		// increaseCart();
+	};
 
 	return (
 		<section className='price-selector'>
 			<p className='price-selector__total'>{activeEvent.price * count} SEK</p>
 
 			<section className='price-selector__controls'>
-				<button className='price-selector__btn price-selector__btn--minus' onClick={decrease}>
+				<button className='price-selector__btn price-selector__btn--minus' onClick={decreaseCount}>
 					-
 				</button>
 				<span className='price-selector__quantity'>{count}</span>
-				<button className='price-selector__btn price-selector__btn--plus' onClick={increase}>
+				<button className='price-selector__btn price-selector__btn--plus' onClick={increaseCount}>
 					+
 				</button>
 			</section>
