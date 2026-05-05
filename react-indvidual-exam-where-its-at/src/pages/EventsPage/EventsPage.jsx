@@ -5,16 +5,17 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import EventItem from '../../components/EventItem/EventItem';
 import { useFetchEvents } from '../../hooks/useFetchEvents';
 import EventList from '../../components/EventList/EventList';
+import { useEffect } from 'react';
 
 const EventsPage = () => {
 	const { events, isLoading, isError } = useFetchEvents();
 
-	// useEffect(() => {
-	// 	console.log(events);
-	// }, [events]);
+	useEffect(() => {
+		console.log(events);
+	}, [events]);
 
-	// if (isLoading) return <p>Loading...</p>;
-	// if (isError) return <p>Something went wrong...</p>;
+	if (isLoading) return <p>Loading...</p>;
+	if (isError) return <p>Something went wrong...</p>;
 
 	return (
 		<section className='page'>

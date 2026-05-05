@@ -30,7 +30,7 @@ function App() {
 					element: <OrderPage />,
 				},
 				{
-					path: 'my-tickets',
+					path: 'tickets',
 					element: <TicketsPage />,
 				},
 			],
@@ -40,6 +40,7 @@ function App() {
 	return (
 		<section className='app'>
 			<RouterProvider router={router} />
+			<div className='bottom-distance'></div>
 		</section>
 	);
 }
@@ -63,6 +64,6 @@ export default App;
 // 	element: <OrderPage />,
 // },
 // {
-// 	path: '/my-tickets',
+// 	path: '/tickets',
 // 	element: <TicketsPage />,
 // },

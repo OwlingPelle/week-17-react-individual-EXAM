@@ -7,6 +7,7 @@
 
 	.event__link {
 		text-decoration: none;
+		transition: transform 0.2s ease;
 	}
 
 	.event__item {
@@ -68,5 +69,9 @@
 				}
 			}
 		}
+	}
+
+	.event__link:hover {
+		transform: scale(1.03);
 	}
 }

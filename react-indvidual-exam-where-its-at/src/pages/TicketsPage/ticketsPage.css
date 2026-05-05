@@ -1,4 +1,7 @@
-/* .page,
-body {
-	background: linear-gradient(to bottom, var(--primary-pink) 0%, var(--primary-bg) 50%);
-} */
+.page--gradient {
+	background: linear-gradient(to bottom, var(--primary-pink) 0%, var(--primary-bg) 90%);
+}
+
+.bottom-distance {
+	height: 5rem;
+}

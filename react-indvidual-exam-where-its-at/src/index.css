@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Libre+Barcode+39&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -12,16 +12,32 @@
 	--primary-turquoise: #37aeab;
 	--primary-white: #ffff;
 }
+/* AI hjälp med snyggare scrollbar */
+/* body::-webkit-scrollbar {
+	width: 12px;
+}
 
+body::-webkit-scrollbar-track {
+	background: none;
+}
+body::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	border: 3px solid transparent;
+	background-clip: content-box;
+} */
 /* .app {
 	display: flex;
+	justify-content: center;
 } */
 
 body,
 html {
-	/* height: 100%;
-	height: 100dvh; */
+	/* scrollbar-gutter: auto; */
+	/* height: 100%; */
+	height: 70vh;
 	background-color: var(--primary-bg);
+	/* overflow-y: auto; */
 }
 .page {
 	margin: 0 auto;
@@ -50,5 +66,11 @@ h4 {
 }
 
 .page-msg {
-	margin: 0 auto;
+	padding-top: 20rem;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	letter-spacing: 3%;
+	color: var(--primary-white);
+	text-align: center;
 }

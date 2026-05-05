@@ -8,6 +8,9 @@ import Cart from '../Cart/Cart';
 
 const Menu = () => {
 	const cart = useCartStore((state) => state.cart);
+	const tickets = useCartStore((state) => state.tickets);
+
+	const cartQty = cart.reduce((acc, e) => acc + e.qty, 0);
 
 	return (
 		<footer className='footer'>
@@ -16,17 +19,28 @@ const Menu = () => {
 					<FontAwesomeIcon className='nav__icon' icon={faCalendar} style={{ color: 'white' }} />
 					<p className='nav__text'>EVENTS</p>
 				</Link>
-				<Link to='/my-tickets' className='nav__link'>
+
+				<Link to='/tickets' className='nav__link'>
 					<FontAwesomeIcon className='nav__icon' icon={faTicketSimple} style={{ color: 'white' }} />
-					<p className='nav__text'>MINA BILJETTER</p>
+
+					{tickets.length > 0 && (
+						<div className='nav__cartCounter navcartCounter--ticketCounter'>
+							<p className='nav__cartCountNumber'>{tickets.length}</p>
+						</div>
+					)}
+
+					<p className='nav__text'>BILJETTER</p>
 				</Link>
+
 				<Link to='/cart' className='nav__link'>
 					<FontAwesomeIcon className='nav__icon' icon={faCartShopping} style={{ color: 'white' }} />
-					<div className='nav__cartCounter' id='cartCountContainer'>
-						<p className='nav__cartCountNumber' id='cartCount'>
-							{cart.reduce((acc, event) => acc + event.qty, 0)}
-						</p>
-					</div>
+
+					{cartQty > 0 && (
+						<div className='nav__cartCounter'>
+							<p className='nav__cartCountNumber'>{cartQty}</p>
+						</div>
+					)}
+
 					<p className='nav__text'>KUNDVAGN</p>
 				</Link>
 			</nav>

@@ -1,1 +1,0 @@
-# week-17-react-individual-EXAM

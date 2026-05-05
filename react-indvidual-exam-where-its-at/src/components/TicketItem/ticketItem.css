@@ -1,0 +1,115 @@
+.page--gradient {
+	padding-top: 2rem;
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center; */
+}
+.ticket {
+	/* margin-top: 2rem; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--primary-white);
+	/* height: 450px; */
+	box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.34);
+	border-radius: 5px;
+	margin-bottom: 1rem;
+}
+
+.ticket__text--title {
+	font-family: 'Sansita', sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: 3%;
+	color: var(--primary-pink);
+	text-align: left;
+}
+.ticket__section {
+	padding: 1rem;
+}
+
+.ticket__label {
+	font-family: 'Fira Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 0.8rem;
+	line-height: 12px;
+	color: rgba(0, 0, 0, 0.8);
+	padding-bottom: 0.5rem;
+}
+.ticket__text {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 14px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.ticket__text--tiny {
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+.ticket__barcode {
+	font-family: 'Libre Barcode 39', system-ui;
+	font-size: 6rem;
+	color: black;
+}
+.ticket__section--grey-one {
+	border-top: 1px dashed rgba(0, 0, 0, 0.4);
+	/* height: 120px; */
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.03);
+}
+.ticket__section--grey-two {
+	padding: 0;
+	border-top: 1px dashed rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	background-color: rgba(0, 0, 0, 0.06);
+
+	.ticket__when {
+		padding: 0.8rem 0 0.8rem 0.8rem;
+		flex: 1;
+	}
+	.ticket__from {
+		padding: 0.8rem 0 0.8rem 0.8rem;
+		border-left: 1px dashed rgba(0, 0, 0, 0.4);
+		padding-left: 1rem;
+		flex: 1;
+	}
+	.ticket__to {
+		padding: 0.8rem 0 0.8rem 0.8rem;
+		border-left: 1px dashed rgba(0, 0, 0, 0.4);
+		padding-left: 1rem;
+		flex: 1;
+	}
+}
+.ticket__section--grey-three {
+	border-top: 1px dashed rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.09);
+}
+.ticket__section--grey-four {
+	border-top: 1px dashed rgba(0, 0, 0, 0.4);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.12);
+	padding-bottom: 0rem;
+
+	.ticket__barcode {
+		margin-top: 1rem;
+		position: relative;
+	}
+	.ticket__id {
+		position: relative;
+		bottom: 30px;
+		font-weight: 700;
+		font-size: 0.8rem;
+		letter-spacing: 0.3em;
+		color: rgba(0, 0, 0, 0.4);
+	}
+}

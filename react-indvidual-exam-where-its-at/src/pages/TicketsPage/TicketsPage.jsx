@@ -1,14 +1,25 @@
 import './ticketsPage.css';
+import { v4 as uuidv4 } from 'uuid';
+
+import { useCartStore } from '../../stores/useCartStore';
+import TicketItem from '../../components/TicketItem/TicketItem';
 
 const TicketsPage = () => {
-	return (
-		<section className='page'>
-			<section className='ticket__wrapper'>
-				<section className='ticket__what'>
-					<p className='what__text'>WHAT</p>
-					h2.
-				</section>
+	const { tickets } = useCartStore();
+
+	if (tickets.length === 0) {
+		return (
+			<section className='page page--gradient'>
+				<p className='page-msg'>Du har inte köpt några biljetter än</p>
 			</section>
+		);
+	}
+	return (
+		<section className='page page--gradient'>
+			{tickets.map((ticket) => (
+				<TicketItem key={ticket.ticketId} ticket={ticket} />
+			))}
+			<div className='bottom-distance'></div>
 		</section>
 	);
 };

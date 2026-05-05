@@ -1,0 +1,28 @@
+.price-selector__controls {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 100;
+	font-size: 2.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 2px solid var(--primary-pink);
+}
+
+.price-selector__name {
+	font-family: 'Sansita', sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+	font-style: italic;
+	letter-spacing: 3%;
+	color: var(--primary-pink);
+	text-align: left;
+	padding: 0.5rem 1rem 0 1rem;
+}
+.price-selector__date {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+	color: var(--primary-turquoise);
+	font-size: 1.2rem;
+	text-align: left;
+	padding: 0rem 1rem 0.5rem 1rem;
+}

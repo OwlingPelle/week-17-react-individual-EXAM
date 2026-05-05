@@ -1,0 +1,72 @@
+.event__list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Fira Sans', sans-serif;
+	color: var(--primary-white);
+
+	.event__link {
+		text-decoration: none;
+	}
+
+	.event__item {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		margin-bottom: 1.2rem;
+
+		.event__date-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			width: 66px;
+			height: 66px;
+			border: 1px solid white;
+			border-radius: 5px;
+
+			.event__day {
+				font-size: 1.2rem;
+			}
+			.event__month {
+				font-size: 0.8rem;
+			}
+		}
+		.event__details {
+			flex: 1;
+
+			.event__title {
+				font-size: 1.3rem;
+				color: var(--primary-white);
+				letter-spacing: 1px;
+				text-shadow: 1.2px 1.2px 0 var(--primary-pink);
+			}
+			.event__venue {
+				font-size: 0.8rem;
+				font-weight: 200;
+				font-style: italic;
+				margin-bottom: 0.3rem;
+			}
+
+			.row {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid #ffffff2c;
+				line-height: 1.5rem;
+
+				.event__time {
+					text-decoration: none;
+					color: var(--primary-white);
+					font-size: 0.9rem;
+				}
+				.event__price {
+					font-weight: 500;
+					color: var(--primary-turquoise);
+					font-size: 1.1rem;
+				}
+			}
+		}
+	}
+}

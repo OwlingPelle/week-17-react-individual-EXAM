@@ -9,6 +9,7 @@
 }
 
 .event {
+	margin-top: 3rem;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -28,9 +29,9 @@
 }
 
 .single-event-page__wrapper {
+	height: 65vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 70vh; /* ELLER HUR FAN SKA JAG LÖSA SKITEN?????*/
 	gap: 2rem;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Button from '../../components/Button/Button';
-import PriceSelector from '../../components/PriceSelector/PriceSelector';
+import Counter from '../../components/Counter/Counter';
 import './singleEventPage.css';
 import { useFetchEvents } from '../../hooks/useFetchEvents';
 import { useParams } from 'react-router-dom';
@@ -11,7 +11,10 @@ const SingleEventPage = () => {
 	const [activeEvent, setActiveEvent] = useState(null);
 	const { events, isLoading, isError } = useFetchEvents();
 	const { id } = useParams();
+	// AI-hjälp...
+	const [qty, setQty] = useState(0);
 	const { addToCart } = useCartStore();
+	//
 
 	useEffect(() => {
 		if (id && events.length > 0) {
@@ -24,13 +27,7 @@ const SingleEventPage = () => {
 	if (isLoading) return <p className='page-msg'>Loading ⏳</p>;
 	if (isError) return <p className='page-msg'>Something went wrong 😬</p>;
 	if (!activeEvent) return <p className='page-msg'>No event found 🧐</p>;
-	// console.log('PriceSelector event:', activeEvent);
 
-	// 1. tillståndsvariabel aktuellt event.
-	// 2. hämta alla event med useFetch.
-	// 3. hämta id med useParams
-	// 4. när jag har både id och events - leta reda på korrekt event och sätt aktuellt event med tillståndsvariabel (array: if jag har en aktuell bok skicka ut , amnars tomma fnuttar'' ternary...)
-	// if (activeEvent) {
 	return (
 		<section className='page'>
 			<header className='header'>
@@ -45,10 +42,19 @@ const SingleEventPage = () => {
 					</h4>
 					<p className='event__venue'>{activeEvent.name}</p>
 				</section>
-				<PriceSelector activeEvent={activeEvent} />
+				<Counter activeEvent={activeEvent} qty={qty} setQty={setQty} />
 				<Button
 					onClick={() => {
-						// addToCart(event, qty);
+						addToCart({
+							id: activeEvent.id,
+							name: activeEvent.name,
+							price: activeEvent.price,
+							date: activeEvent.when.date,
+							start: activeEvent.when.from,
+							location: activeEvent.where,
+							end: activeEvent.when.to,
+							qty,
+						});
 						console.log('TRYCKT!');
 					}}
 					text='Lägg i varukorgen'

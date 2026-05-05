@@ -1,37 +1,17 @@
-const OrderItem = ({ event, decrease, increase, value }) => {
-	return (
-		<section className='order-item'>
-			<section className='order-item__top'>
-				<section className='event'>
-					<h3 className='event__title'>{event.name}</h3>
-					<h4 className='event__date'>{event.when.date.from.to}</h4>
-				</section>
-			</section>
+// components/OrderItem/OrderItem.jsx
+import CounterOrder from '../CounterOrder/CounterOrder';
+import './orderItem.css';
 
-			<section className='price-selector__controls'>
-				<button className='price-selector__btn price-selector__btn--minus' onClick={decrease}>
-					-
-				</button>
-				<span className='price-selector__quantity'>{value}</span>
-				<button className='price-selector__btn price-selector__btn--plus' onClick={increase}>
-					+
-				</button>
-			</section>
-		</section>
+const OrderItem = ({ item, onIncrease, onDecrease }) => {
+	return (
+		<article className='order-item'>
+			{/* <section className='price-selector__total'></section> */}
+
+			<CounterOrder item={item} qty={item.qty} onIncrease={() => onIncrease(item.id)} onDecrease={() => onDecrease(item.id)} />
+
+			{/* <p className='order-item__subtotal'>{item.price * item.qty} sek</p> */}
+		</article>
 	);
 };
 
 export default OrderItem;
-
-// export const Counter = ({ event, decrease, increase, value, inCart = false }) => {
-// 	return (
-// 		<section className='counter'>
-// 			<article className='counter__top'>{inCart ? <EventInfo event={event} hideVenue={true} /> : <h2 className='counter__price'>{event.price * value}</h2>}</article>
-// 			<section className='counter__footer'>
-// 				<Button className='counter__btn' onClick={decrease} text='-' />
-// 				<h3 className='counter__qty'>{value}</h3>
-// 				<Button className='counter__btn' onClick={increase} text='+' />
-// 			</section>
-// 		</section>
-// 	);
-// };
