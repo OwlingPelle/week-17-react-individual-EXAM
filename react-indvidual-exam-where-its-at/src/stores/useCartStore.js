@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-// >Här har jag fått hjälp av Konrad samt felsökningshjälp av ai...
+// >Här har jag fått hjälp av Konrad samt en del ai...
 export const useCartStore = create((set) => ({
 	cart: [],
 	tickets: [],
