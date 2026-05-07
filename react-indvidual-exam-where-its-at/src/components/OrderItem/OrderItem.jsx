@@ -1,4 +1,3 @@
-// components/OrderItem/OrderItem.jsx
 import CounterOrder from '../CounterOrder/CounterOrder';
 import './orderItem.css';
 

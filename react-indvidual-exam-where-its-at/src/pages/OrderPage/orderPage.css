@@ -9,7 +9,6 @@
 }
 
 .order-page__wrapper {
-	/* height: 75vh; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
