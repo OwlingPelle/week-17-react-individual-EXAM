@@ -6,8 +6,10 @@ import { useFetchEvents } from '../../hooks/useFetchEvents';
 import { useParams } from 'react-router-dom';
 import { useCartStore } from '../../stores/useCartStore';
 import Cart from '../../components/Cart/Cart';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SingleEventPage = () => {
+	const notify = () => toast('✅ Biljetterna lades till i varukorgen!');
 	const [activeEvent, setActiveEvent] = useState(null);
 	const { events, isLoading, isError } = useFetchEvents();
 	const { id } = useParams();
@@ -31,7 +33,7 @@ const SingleEventPage = () => {
 	return (
 		<section className='page'>
 			<header className='header'>
-				<h1 className='header__title'>Events</h1>
+				<h1 className='header__title'>Event</h1>
 				<h2 className='header__sub-title'>You are about to score some tickets to</h2>
 			</header>
 			<section className='single-event-page__wrapper'>
@@ -45,6 +47,7 @@ const SingleEventPage = () => {
 				<Counter activeEvent={activeEvent} qty={qty} setQty={setQty} />
 				<Button
 					onClick={() => {
+						//lite ai-hjälp här
 						addToCart({
 							id: activeEvent.id,
 							name: activeEvent.name,
@@ -55,6 +58,9 @@ const SingleEventPage = () => {
 							end: activeEvent.when.to,
 							qty,
 						});
+
+						notify();
+
 						console.log('TRYCKT!');
 					}}
 					text='Lägg i varukorgen'

@@ -44,9 +44,10 @@
 			}
 			.event__venue {
 				font-size: 0.8rem;
-				font-weight: 200;
+				font-weight: 400 !important;
+				line-height: 0.5rem;
 				font-style: italic;
-				margin-bottom: 0.3rem;
+				margin-bottom: 0.5rem !important;
 			}
 
 			.row {

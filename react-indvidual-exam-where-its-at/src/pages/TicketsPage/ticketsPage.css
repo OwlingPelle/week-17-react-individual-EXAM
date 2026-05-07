@@ -1,7 +1,5 @@
 .page--gradient {
+	height: 100vh;
 	background: linear-gradient(to bottom, var(--primary-pink) 0%, var(--primary-bg) 90%);
-}
-
-.bottom-distance {
-	height: 5rem;
+	position: relative;
 }

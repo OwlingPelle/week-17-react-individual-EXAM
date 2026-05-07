@@ -4,6 +4,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	gap: 0.8rem;
 
 	.start__logo {
@@ -18,4 +19,13 @@
 		color: var(--primary-white);
 		text-align: center;
 	}
+
+	.start__loading {
+		width: 4rem;
+		justify-self: center !important;
+	}
+}
+
+.no-menu .footer {
+	display: none !important;
 }

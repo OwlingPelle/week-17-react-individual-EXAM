@@ -26,24 +26,3 @@ const CounterOrder = ({ item, qty, onIncrease, onDecrease }) => {
 };
 
 export default CounterOrder;
-
-// import './counterOrder.css';
-
-// const Counter = ({ qty, onIncrease, onDecrease }) => {
-// 	return (
-// 		<section className='counter'>
-// 			<button className='counter__btn' onClick={onDecrease}>
-// 				-
-// 			</button>
-// 			<span className='counter__value'>{qty}</span>
-// 			<button className='counter__btn' onClick={onIncrease}>
-// 				+
-// 			</button>
-// 		</section>
-// 	);
-// };
-
-// export default Counter;
-
-// import { useEffect, useState } from 'react';
-// import { useCartStore } from '../../stores/useCartStore';

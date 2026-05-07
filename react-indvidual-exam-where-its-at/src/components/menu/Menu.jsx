@@ -41,7 +41,7 @@ const Menu = () => {
 						</div>
 					)}
 
-					<p className='nav__text'>KUNDVAGN</p>
+					<p className='nav__text'>VARUKORG</p>
 				</Link>
 			</nav>
 		</footer>

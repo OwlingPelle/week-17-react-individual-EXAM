@@ -3,8 +3,6 @@ import { useFetchEvents } from '../../hooks/useFetchEvents';
 import './eventItem.css';
 
 const EventItem = ({ event }) => {
-	// const [day, month] = activeEvent.when.date.split(' ');
-	// const shortMonth = month.slice(0, 3);
 	return (
 		<section className='event__list'>
 			<Link className='event__link' to={`/events/${event.id}`}>

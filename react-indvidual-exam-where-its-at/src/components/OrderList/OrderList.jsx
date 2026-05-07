@@ -1,6 +1,5 @@
 // components/OrderList/OrderList.jsx
 import OrderItem from '../OrderItem/OrderItem';
-import './orderList.css';
 
 const OrderList = ({ cart, increaseQty, decreaseQty }) => {
 	return (

@@ -1,16 +1,11 @@
 .page--gradient {
 	padding-top: 2rem;
-	/* display: flex;
-	flex-direction: column;
-	justify-content: center; */
 }
 .ticket {
-	/* margin-top: 2rem; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: var(--primary-white);
-	/* height: 450px; */
 	box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.34);
 	border-radius: 5px;
 	margin-bottom: 1rem;
@@ -19,6 +14,7 @@
 .ticket__text--title {
 	font-family: 'Sansita', sans-serif;
 	font-weight: 700;
+	line-height: 2rem;
 	font-style: italic;
 	letter-spacing: 3%;
 	color: var(--primary-pink);
@@ -50,14 +46,8 @@
 	font-size: 1rem;
 }
 
-.ticket__barcode {
-	font-family: 'Libre Barcode 39', system-ui;
-	font-size: 6rem;
-	color: black;
-}
 .ticket__section--grey-one {
 	border-top: 1px dashed rgba(0, 0, 0, 0.4);
-	/* height: 120px; */
 	display: flex;
 	flex-direction: column;
 	background-color: rgba(0, 0, 0, 0.03);
@@ -101,12 +91,15 @@
 	padding-bottom: 0rem;
 
 	.ticket__barcode {
-		margin-top: 1rem;
+		font-family: 'Libre Barcode 39', system-ui !important;
+		font-size: 6rem;
+		color: black;
 		position: relative;
 	}
+
 	.ticket__id {
 		position: relative;
-		bottom: 30px;
+		bottom: 50px;
 		font-weight: 700;
 		font-size: 0.8rem;
 		letter-spacing: 0.3em;

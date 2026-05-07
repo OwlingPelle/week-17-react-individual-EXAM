@@ -1,11 +1,11 @@
 import './eventsPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-// import { useEffect } from 'react';
 import EventItem from '../../components/EventItem/EventItem';
 import { useFetchEvents } from '../../hooks/useFetchEvents';
 import EventList from '../../components/EventList/EventList';
 import { useEffect } from 'react';
+import { Input } from '@mantine/core';
 
 const EventsPage = () => {
 	const { events, isLoading, isError } = useFetchEvents();
@@ -21,11 +21,7 @@ const EventsPage = () => {
 		<section className='page'>
 			<header className='header'>
 				<h1 className='header__title'>Events</h1>
-
-				<div className='search-wrapper'>
-					<FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
-					<input type='search' className='searchbar' />
-				</div>
+				<Input placeholder='Search events...' variant='filled' radius='lg' className='searchbar' />
 			</header>
 			<EventList events={events} />
 		</section>
